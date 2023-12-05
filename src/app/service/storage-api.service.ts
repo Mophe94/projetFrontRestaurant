@@ -15,4 +15,18 @@ export class StorageApiService {
   getAll(page: number): Observable<Page<Storage>> {
     return this.client.get<Page<Storage>>('http://localhost:8080/storage/all?page=' + page)
   }
+
+  create(storage :Storage) : Observable<Storage>{
+    return this.client.post<Storage>('http://localhost:8080/storage/add',storage)
+  }
+
+  delete(idStorageToDelete :number) : Observable<Storage>{
+    return this.client.delete<Storage>('http://localhost:8080/storage/'+idStorageToDelete)
+  }
+
+  update(id : number,storage : Storage) : Observable<Storage>{
+    return  this.client.put<Storage>('http://localhost:8080/storage/'+id,storage)
+  }
+
+
 }

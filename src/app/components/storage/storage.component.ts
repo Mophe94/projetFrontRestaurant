@@ -1,15 +1,16 @@
-import {Component} from '@angular/core';
+import {Component, SimpleChange} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Storage} from "../shared/models/storage";
-import {StorageApiService} from "../service/storage-api.service";
-import {Page} from "../shared/models/page.model";
+import {Storage} from "../../shared/models/storage";
+import {StorageApiService} from "../../service/storage-api.service";
+import {Page} from "../../shared/models/page.model";
 import {Observable, tap} from "rxjs";
-import {ModalStorageFormComponent} from "../components/modal-storage-form/modal-storage-form.component";
+import {ModalStorageFormComponent} from "../modal-storage-form/modal-storage-form.component";
+import {PaginationComponent} from "../pagination/pagination.component";
 
 @Component({
   selector: 'app-storage',
   standalone: true,
-  imports: [CommonModule, ModalStorageFormComponent],
+  imports: [CommonModule, ModalStorageFormComponent, PaginationComponent],
   templateUrl: './storage.component.html',
   styleUrl: './storage.component.css'
 })
@@ -42,11 +43,15 @@ export class StorageComponent {
       .subscribe(rslt => this.page = rslt.number)
   }
 
-  loadStorage(page: number): Observable<Page<Storage>> {
+ loadStorage(page: number): Observable<Page<Storage>> {
     return this.$storageServ.getAll(page).pipe(
       tap(response => this.storages = response)
     )
   }
 
+
+  delete(id:number){
+    return this.$storageServ.delete(id).subscribe()
+  }
 
 }
