@@ -21,6 +21,10 @@ export class NavComponent {
     {
       title : 'Inventory',
       url : 'storage'
+    },
+    {
+      title : "login",
+      url : "login"
     }
 
   ]

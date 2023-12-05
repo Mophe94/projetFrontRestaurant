@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Storage} from "../shared/models/storage";
-import {StorageApiService} from "../service/storage-api.service";
-import {Page} from "../shared/models/page.model";
+import {Storage} from "../../shared/models/storage";
+import {StorageApiService} from "../../service/storage-api.service";
+import {Page} from "../../shared/models/page.model";
 import {Observable, tap} from "rxjs";
-import {ModalStorageFormComponent} from "../components/modal-storage-form/modal-storage-form.component";
+import {ModalStorageFormComponent} from "../modal-storage-form/modal-storage-form.component";
 
 @Component({
   selector: 'app-storage',
@@ -19,7 +19,11 @@ export class StorageComponent {
   page: number = 0;
 
   constructor(private readonly $storageServ: StorageApiService) {
-    this.loadStorage(this.page).subscribe()
+    this.loadStorages()
+  }
+
+  loadStorages(){
+    this.loadStorage(this.page).subscribe(data => this.storages = data)
   }
 
   previous() {
