@@ -1,0 +1,44 @@
+<div class="table table-bordered" class="dataTable">
+    <div class="button-add">
+      <app-modal-product></app-modal-product>
+    </div>
+  <h4>Product</h4>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">quantity</th>
+      <th scope="col">measuring unit</th>
+      <th scope="col">Name</th>
+      <th scope="col">expiration date</th>
+
+    </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let product of products?.content">
+      <th scope="row">{{product.quantity}}</th>
+      <th scope="row">{{product.measuringUnit}}</th>
+      <td>{{product.productTemplateName}}</td>
+      <td>{{product.expireDate}}</td>
+      <td>
+
+      </td>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="previous()" aria-label="Previous">
+          <span aria-hidden="true" >&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item">
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="next()" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+

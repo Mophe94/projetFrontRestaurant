@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoutonUplaodComponent } from './bouton-uplaod.component';
+import { ListFailedComponent } from './list-failed.component';
 
-describe('BoutonUplaodComponent', () => {
-  let component: BoutonUplaodComponent;
-  let fixture: ComponentFixture<BoutonUplaodComponent>;
+describe('ListFailedComponent', () => {
+  let component: ListFailedComponent;
+  let fixture: ComponentFixture<ListFailedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BoutonUplaodComponent]
+      imports: [ListFailedComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(BoutonUplaodComponent);
+    fixture = TestBed.createComponent(ListFailedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

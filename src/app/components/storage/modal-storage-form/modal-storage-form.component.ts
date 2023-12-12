@@ -1,9 +1,9 @@
 import {Component, inject, Input, TemplateRef} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ModalDismissReasons, NgbInputDatepicker, NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {Storage} from "../../shared/models/storage";
+import {Storage} from "../../../shared/models/storage";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {StorageApiService} from "../../service/storage-api.service";
+import {StorageApiService} from "../../../service/storage-api.service";
 import {Router} from "@angular/router";
 import {STORAGE_UPDATE_FORM} from "./STORAGE_UPDATE_FORM";
 import {STORAGE_FORM} from "./STORAGE_FORM";
@@ -21,7 +21,7 @@ export class ModalStorageFormComponent {
   toUpdate?: Storage;
 
   @Input()
-  idStorage?: number
+  idStorage?: number;
 
   form! :FormGroup
 

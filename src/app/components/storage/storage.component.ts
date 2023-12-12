@@ -4,12 +4,13 @@ import {Storage} from "../../shared/models/storage";
 import {StorageApiService} from "../../service/storage-api.service";
 import {Page} from "../../shared/models/page.model";
 import {Observable, tap} from "rxjs";
-import {ModalStorageFormComponent} from "../modal-storage-form/modal-storage-form.component";
+import {ModalStorageFormComponent} from "./modal-storage-form/modal-storage-form.component";
+import {ProductComponent} from "../product/product.component";
 
 @Component({
   selector: 'app-storage',
   standalone: true,
-  imports: [CommonModule, ModalStorageFormComponent],
+  imports: [CommonModule, ModalStorageFormComponent, ProductComponent],
   templateUrl: './storage.component.html',
   styleUrl: './storage.component.css'
 })
@@ -20,6 +21,7 @@ export class StorageComponent {
 
   constructor(private readonly $storageServ: StorageApiService) {
     this.loadStorages()
+
   }
 
   loadStorages(){

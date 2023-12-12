@@ -1,0 +1,38 @@
+<div>
+  <div class="table table-bordered" class="dataTable">
+    <h4>Production Failed</h4>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Ratio</th>
+        <th scope="col">Name of Worker</th>
+        <th scope="col">Status</th>
+      </tr>
+      </thead>
+      <tbody *ngIf="productionItems">
+      <tr *ngFor="let production of productionItems?.content">
+        <td >{{production.NameOfProduction}}</td>
+        <td>{{production.ratio}}</td>
+        <td>{{production.nameOfWorker}}</td>
+        <td>{{production.status}}</td>
+      </tbody>
+    </table>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" (click)="previous()" aria-label="Previous">
+            <span aria-hidden="true" >&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item">
+        </li>
+        <li class="page-item">
+          <a class="page-link" (click)="next()" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

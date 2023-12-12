@@ -1,25 +1,27 @@
 <div>
-  <div class="button-add">
-    <app-modal-storage-form></app-modal-storage-form>
-  </div>
   <div class="table table-bordered" class="dataTable">
-    <h4>Storage</h4>
+    <h4>Production In Progress</h4>
     <table class="table">
       <thead>
       <tr>
-        <th scope="col">id</th>
-        <th scope="col">Type</th>
         <th scope="col">Name</th>
-        <th scope="col">action</th>
+        <th scope="col">Ratio</th>
+        <th scope="col">Name of Worker</th>
+        <th scope="col">Status</th>
       </tr>
       </thead>
-      <tbody *ngIf="storages">
-      <tr *ngFor="let storage of storages?.content">
-        <th scope="row">{{storage.id}}</th>
-        <td>{{storage.storageType}}</td>
-        <td>{{storage.name}}</td>
+      <tbody *ngIf="productionItems">
+      <tr *ngFor="let production of productionItems?.content">
+        <td>{{production.NameOfProduction}}</td>
+        <td>{{production.ratio}}</td>
+        <td>{{production.nameOfWorker}}</td>
+        <td>{{production.status}}</td>
         <td>
-          <app-modal-storage-form  [toUpdate]="storage"></app-modal-storage-form>
+          <button type="button" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-skip-end-fill" viewBox="0 0 16 16">
+              <path d="M12.5 4a.5.5 0 0 0-1 0v3.248L5.233 3.612C4.693 3.3 4 3.678 4 4.308v7.384c0 .63.692 1.01 1.233.697L11.5 8.753V12a.5.5 0 0 0 1 0z"/>
+            </svg>
+          </button>
           <button type="button" class="btn btn-danger">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3"
                  viewBox="0 0 16 16">
@@ -48,14 +50,3 @@
     </nav>
   </div>
 </div>
-<app-product></app-product>
-
-
-
-
-
-
-
-
-
-
